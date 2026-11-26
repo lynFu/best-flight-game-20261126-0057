@@ -127,6 +127,7 @@ export function stepFlight(f, input, dt, rings) {
     if (onStrip && gentle && f.ringsPassed >= CFG.ringCount) {
       f.state = 'complete';
       f.landedAt = f.time;
+      f.speed = 0;
       const timeBonus = Math.max(0, Math.round(600 - f.time * 2));
       f.score += CFG.landingScore + timeBonus;
     } else if (onStrip && gentle) {
